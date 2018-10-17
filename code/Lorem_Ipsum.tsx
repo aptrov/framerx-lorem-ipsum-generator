@@ -40,6 +40,7 @@ export class Lorem_Ipsum extends React.Component {
     units: 'words',
     startWithLoremIpsum: true,
     color: 'black',
+    align: 'left',
   };
 
   static propertyControls = {
