@@ -32,7 +32,10 @@ class Lorem_Ipsum_Wrapper extends React.PureComponent {
 
 export class Lorem_Ipsum extends React.Component {
   static defaultProps = {
-    text: 'Hello World!',
+    typeface: 'sans-serif',
+    weight: '400',
+    size: 16,
+    style: 'normal',
     count: 2,
     units: 'words',
     startWithLoremIpsum: true,
@@ -40,6 +43,27 @@ export class Lorem_Ipsum extends React.Component {
   };
 
   static propertyControls = {
+    typeface: { type: ControlType.String, title: 'Typeface' },
+    weight: {
+      type: ControlType.Enum,
+      options: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+      optionTitles: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+      title: 'Weight',
+    },
+    style: {
+      type: ControlType.SegmentedEnum,
+      title: ' ',
+      options: ['normal', 'italic'],
+      optionTitles: ['Normal', 'Italic'],
+    },
+    size: { type: ControlType.Number, min: 1, title: 'Size' },
+    color: { type: ControlType.Color, title: 'Color' },
+    align: {
+      type: ControlType.SegmentedEnum,
+      title: 'Align',
+      options: ['left', 'center', 'right', 'justify'],
+      optionTitles: ['L', 'C', 'R', 'J'],
+    },
     count: { type: ControlType.Number, min: 1, title: 'Count' },
     units: {
       type: ControlType.Enum,
@@ -47,7 +71,6 @@ export class Lorem_Ipsum extends React.Component {
       optionTitles: ['Words', 'Sentences', 'Paragraphs', 'Bytes'],
       title: 'Units',
     },
-    color: { type: ControlType.Color, title: 'Color' },
     startWithLoremIpsum: {
       type: ControlType.Boolean,
       title: 'Lorem ipsum...',
@@ -57,14 +80,33 @@ export class Lorem_Ipsum extends React.Component {
   };
 
   render() {
-    const { count, units, startWithLoremIpsum, color } = this.props;
+    const {
+      count,
+      units,
+      startWithLoremIpsum,
+      color,
+      typeface: fontFamily,
+      weight: fontWeight,
+      size: fontSize,
+      style: fontStyle,
+      align: textAlign,
+    } = this.props;
 
     return (
       <Lorem_Ipsum_Wrapper
         count={count}
         units={units}
         startWithLoremIpsum={startWithLoremIpsum}
-        style={{ color, overflow: 'hidden', height: '100%' }}
+        style={{
+          color,
+          fontFamily,
+          fontWeight,
+          fontSize,
+          fontStyle,
+          textAlign,
+          overflow: 'hidden',
+          height: '100%',
+        }}
       />
     );
   }
