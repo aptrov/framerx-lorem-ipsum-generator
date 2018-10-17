@@ -11,4 +11,5 @@ In the background it uses [getlorem by Luke Haas](https://github.com/lukehaas/ge
 - [x] Add basic styling options, like Typeface and Font Size
 - [ ] Add advanced text styling options, i.e. letter spacing and line height
 - [ ] Refactor some code
-- [ ] Add a proper artwork and icon to package's metadata
+- [ ] Add properties to controll scrolling (overflow)
+- [x] Add a proper artwork and icon to package's metadata
