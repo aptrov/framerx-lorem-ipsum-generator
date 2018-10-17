@@ -19,6 +19,7 @@
 	},
 	"author": "Anton Petrov",
 	"dependencies": {
+		"@framer/apetrov.lorem-ipsum-generator": "^1.4.0",
 		"getlorem": "^1.0.1"
 	},
 	"name": "@framer/apetrov.lorem-ipsum-generator",
