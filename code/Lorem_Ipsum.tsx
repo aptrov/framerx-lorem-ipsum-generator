@@ -4,15 +4,9 @@ import 'getlorem';
 
 class Lorem_Ipsum_Text extends React.PureComponent {
   render() {
-    return (
-      <>
-        {window.getlorem[this.props.units](
-          this.props.count,
-          undefined,
-          this.props.startWithLoremIpsum,
-        )}
-      </>
-    );
+    const { units, count, startWithLoremIpsum } = this.props;
+
+    return window.getlorem[units](count, undefined, startWithLoremIpsum);
   }
 }
 
