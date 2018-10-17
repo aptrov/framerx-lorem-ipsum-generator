@@ -22,7 +22,7 @@
 		"getlorem": "^1.0.1"
 	},
 	"name": "@framer/apetrov.lorem-ipsum-generator",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"keywords": [
 		"lorem ipsum"
 	]
